@@ -25,7 +25,9 @@ const app = express();
 
 // CORS مقيّد: يسمح فقط لعنوان الفرونت إند المحدد بمتغيرات البيئة
 // (بدل السماح لأي موقع بالعالم يستدعي الـ API)
-const allowedOrigin = process.env.CORS_ORIGIN || "http://localhost:5173";
+const allowedOrigin = "*";
+
+
 app.use(cors({ origin: allowedOrigin, allowedHeaders: ["Content-Type", "x-session-token"] }));
 app.use(express.json());
 
